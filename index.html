@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <title>yuya-takeyama.github.com</title>
-</head>
-<body>
-       <h1>It works!</h1>
-</body>
-</html>
+---
+layout: default
+title: yuya-takeyama.github.com
+---
+<div class="posts">
+  <h1>{{ page.title }}</h1>
+  <ul>
+{% for post in site.posts limit:10 %}
+    <li>
+    <span>{{ post.date | date_to_string }}<a href="{{ post.url }}">{{ post.title }}</a></span>
+    </li>
+{% endfor %}
+  </ul>
+</div>
